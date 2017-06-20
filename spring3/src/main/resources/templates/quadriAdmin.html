@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+ <html xmlns:th="http://www.thymeleaf.org">
+  <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="../static/vendor/bootstrap/css/bootstrap.min.css"
+	th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"
+	media="screen" type="text/css" />
+	<link href="../static/vendor/font-awesome/css/font-awesome.min.css"
+	th:href="@{/vendor/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" media="screen" type="text/css" />
+	</head>
+ <body>
+ 	<div class="container">
+ 	
+    <table class="table table-striped">
+     <tr> 
+       <th>Titolo</th>
+       <th>Autore</th>
+       <th>Anno</th>
+       <th>Tecnica</th>
+       <th>Dimensioni</th>
+     </tr>
+       <tr th:each="quadro : ${quadri}">
+         <td th:text="${quadro.titolo}"></td>
+         <td th:text="${quadro.autore.nome}+' ' +${quadro.autore.cognome}"></td>
+         <td th:text="${quadro.anno}"></td>
+         <td th:text="${quadro.tecnica}"></td>
+         <td th:text="${quadro.dimensioni}"></td>
+         <td> <a th:href="@{quadro/elimina?(id=${quadro.id})}">elimina</a></td>
+         
+       </tr>
+     </table>
+   
+   </div>
+    <p><a href="/index"> torna al menu principale</a></p>
+ </body>
+ </html> 

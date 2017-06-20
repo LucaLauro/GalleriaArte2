@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="../static/vendor/bootstrap/css/bootstrap.min.css"
+	th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"
+	media="screen" type="text/css" />
+	<link href="../static/vendor/font-awesome/css/font-awesome.min.css"
+	th:href="@{/vendor/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" media="screen" type="text/css" />
+	</head>
+<body>
+	<div>
+    	<p th:text="'Nome: ' + ${autore.nome}" />
+    </div>
+	<div>
+    	<p th:text="'Cognome: ' + ${autore.cognome}" />
+    </div>
+	<div>
+    	<p th:text="'Nazionalità: ' + ${autore.nazionalita}" />	
+    </div>
+	<div>
+    	<p th:text="'Data di nascita: ' + ${autore.dataDiNascita}" />	
+    </div>
+    <div>
+    	<p th:text="'Data di morte: '  + ${autore.dataDiMorte}"/>	
+    </div>
+    <p><a href="/index"> torna al menu principale</a></p>
+</body>
+</html>

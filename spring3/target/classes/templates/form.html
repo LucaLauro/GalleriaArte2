@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Nuovo Quadro</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../static/vendor/bootstrap/css/bootstrap.min.css"
+	th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"
+	media="screen" type="text/css" />
+<link href="../static/vendor/font-awesome/css/font-awesome.min.css"
+	th:href="@{/vendor/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" media="screen" type="text/css" />
+	<link href="../static/css/test.css"
+	th:href="@{/css/test.css}" rel="stylesheet" media="screen"
+	type="text/css" />
+</head>
+<body>
+	<form action="#" th:action="@{/quadro}" th:object="${quadro}"
+		method="post">
+		<fieldset>
+		<legend>Inserisci Quadro</legend>
+		<div>
+			<div>
+				<span th:text="#{label.titolo}">Titolo: </span> <span><input
+					type="text" th:field="*{titolo}" /></span> <span
+					th:if="${#fields.hasErrors('titolo')}" th:text="#{label.mandatory}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.anno}">Anno: </span> <span><input
+					type="text" th:field="*{anno}" /></span> <span
+					th:if="${#fields.hasErrors('anno')}" th:text="#{label.number}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.tecnica}">Tecnica: </span> <span><input
+					type="text" th:field="*{tecnica}" /></span> <span
+					th:if="${#fields.hasErrors('tecnica')}"
+					th:text="#{label.mandatory}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.dimensioni}">Dimensioni: </span> <span><input
+					type="text" th:field="*{dimensioni}" /></span> <span
+					th:if="${#fields.hasErrors('dimensioni')}" th:text="#{label.mandatory}">Error</span>
+			</div>
+			<div class="form-group">
+  			<select class="form-control col-sm-3" th:field="*{autore}" id="dropAutori">
+  			        <option value="0"> Seleziona un Autore</option>
+ 					<option th:each="autore : ${autori}" th:value="${autore.id}"
+ 						th:text="${autore.nome}+' '+${autore.cognome}">autore</option>
+				</select>
+			</div>
+			<div>
+				<span><button type="submit">Submit</button></span>
+			</div>
+		</div>
+		</fieldset>
+	</form>
+</body>
+</html>

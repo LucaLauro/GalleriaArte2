@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Nuovo Autore</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../static/vendor/bootstrap/css/bootstrap.min.css"
+	th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"
+	media="screen" type="text/css" />
+<link href="../static/vendor/font-awesome/css/font-awesome.min.css"
+	th:href="@{/vendor/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" media="screen" type="text/css" />
+	<link href="../static/css/test.css"
+	th:href="@{/css/test.css}" rel="stylesheet" media="screen"
+	type="text/css" />
+</head>
+<body>
+	<form action="#" th:action="@{/formAdmin}" th:object="${admin}"
+		method="post">
+		<fieldset>
+		<legend>Inserisci un amministratore</legend>
+		<div>
+			<div>
+				<span th:text="#{label.username}">Username: </span> <span><input
+					type="text" th:field="*{username}" /></span> <span
+					th:if="${#fields.hasErrors('username')}" th:text="#{label.mandatory}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.password}">Password: </span> <span><input
+					type="text" th:field="*{password}" /></span> <span
+					th:if="${#fields.hasErrors('password')}" th:text="#{label.mandatory}">Error</span>
+			</div>
+			
+				<span><button type="submit">Submit</button></span>
+			</div>
+			</fieldset>
+	</form>
+</body>
+</html>

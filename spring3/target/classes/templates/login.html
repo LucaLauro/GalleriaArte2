@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:tiles="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="icon" href="../../favicon.ico" />
+<link href="/css/bootstrap-min.css" rel="stylesheet"/>
+<link href="/css/signin.css" rel="stylesheet"/>
+<title>Login</title>
+</head>
+<body>
+	<div class="container">
+		<form name="f" th:action="@{/login}" method="post" class="form-signin">
+			
+			<h2 class="form-signin-heading">Autenticazione</h2>
+			
+			<div th:if="${param.error}" class="alert alert-danger">Username o password errati</div>
+			
+			<label for="username" class="sr-only">Username</label>
+			
+			<input	type="text" id="username" class="form-control" placeholder="Username" name="username"/> 
+			
+			<label for="password" class="sr-only">Password</label> 
+			
+			<input type="password" id="password" class="form-control" placeholder="Password" name="password"/>
+			
+			<button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+		</form>
+	</div>
+</body>
+</html>

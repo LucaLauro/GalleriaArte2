@@ -1,0 +1,17 @@
+form{width:370px;padding:5px 0;margin:10px}
+
+fieldset{float:left;width:370px;
+    margin: 1em 0;padding: 0;
+    border: none;border-top: 1px solid #99A0FA;
+    }
+    legend{font-weight:bold;color: #333;background:#FFF}
+form b{color:#F00}
+form p{margin:0.5em 10px}
+fieldset div{float:left;width:100%;
+    padding: 10px 0 12px;
+   }
+    label{float:left;width:120px;
+    display: inline;margin-left: 10px;
+    line-height:23px}
+    div#confirm-address label,div#sports label,input#go{
+    margin-left:130px}
